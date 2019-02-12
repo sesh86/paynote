@@ -1,0 +1,24 @@
+.notes{background-color: RGB(6,158,223);width:250px;height:250px;}
+.cat{min-height:600px;padding:10px;vertical-align: middle;}
+.text{color: #336699 !important;}
+
+.nav-link{color:white}
+.bg-payNotes{background-color: #336699}
+.btn-darkblue {background-color: #336699!important;color: white!important;}
+.btn-darkblue:hover{background-color:white  ;color:#336699;border:1px solid #336699}
+
+@media (max-width: 480px) {
+.input-group-addon, .input-group-btn, .input-group .form-control {
+    display: block;
+    margin-bottom: 10px;
+    clear: both;
+    }
+.input-group {
+    display: block;
+    }
+}
+.logo1{font-size:24px;color:#336699;font-weight:bold}
+.logo2{font-size:24px;color:RGB(6,158,223);font-weight:bold}
+.btn-logout{background-color: RGB(6,158,223);;color:white}
+
+.cat{background-color: RGB(6,158,223)}
