@@ -1,7 +1,8 @@
 const express=require('express')
 const _app=require('./config.js')
-
+const cors=require('cors');
 var fs=require('fs');
+
 notes=fs.readFileSync(__dirname+'/notes.json');
 notes=JSON.parse(notes);
 
@@ -9,7 +10,7 @@ app=express();
 
 app.use(express.json());
 
-app.post('/login',(req,res)=>{
+app.post('/login',cors(),(req,res)=>{
 
     try{
         if(req.body.userName=='user@example.com' && req.body.password=='1234'){
@@ -24,7 +25,7 @@ app.post('/login',(req,res)=>{
     }
 });
 
-app.post('/getNotes',(req,res)=>{
+app.post('/getNotes',cors(),(req,res)=>{
     try{
             res.send(notes)
     }
@@ -33,7 +34,7 @@ app.post('/getNotes',(req,res)=>{
     }
 });
 
-app.post('/saveEditedNote',(req,res)=>{
+app.post('/saveEditedNote',cors(),(req,res)=>{
     
     let index=req.body.index;
     let newNote=req.body.note;
@@ -47,7 +48,7 @@ app.post('/saveEditedNote',(req,res)=>{
     }
 });
 
-app.post('/createNote',(req,res)=>{
+app.post('/createNote',cors(),(req,res)=>{
     let newNote=req.body.note;
     notes.unshift(newNote);
     
